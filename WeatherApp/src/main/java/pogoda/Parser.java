@@ -53,6 +53,7 @@ public class Parser {
         Document page = getPage();
         //css query language
         Element divWth = page.select("div[class=frame-now]").first();
+        assert divWth != null;
         String names = divWth.select("div[class=current-time]").text();
         //Elements label = divWth.select("div[class=item-label]");
         String value = divWth.select("div[class=item-value]").text();
