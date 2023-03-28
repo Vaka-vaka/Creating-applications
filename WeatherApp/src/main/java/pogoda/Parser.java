@@ -35,7 +35,7 @@ public class Parser {
         throw new Exception("Can't extract date from string!");
     }
 
-    private static String printFourValues(String values, int index) {
+    private static String getValues(String values, int index) {
         String string = "";
         String[] arrayString = values.split(" ");
         for (int i = 0; i < arrayString.length; i++) {
@@ -58,10 +58,10 @@ public class Parser {
         //Elements label = divWth.select("div[class=item-label]");
         String value = divWth.select("div[class=item-value]").text();
         String date = getDateFromString(names);
-        System.out.println("Погода Gismeteo " + date + "\nТемпература = " + printFourValues(value, 0)
-                + ";\nВітер = " + printFourValues(value, 2) + " м/с"
-                + ";\nТиск = " + printFourValues(value, 8) + " мм рт. ст."
-                + ";\nВологість = " + printFourValues(value, 14) + " %"
-                + ";\nВода = " + printFourValues(value, 18) + ".");
+        System.out.println("Погода Gismeteo " + date + "\nТемпература = " + getValues(value, 0)
+                + ";\nВітер = " + getValues(value, 2) + " м/с"
+                + ";\nТиск = " + getValues(value, 8) + " мм рт. ст."
+                + ";\nВологість = " + getValues(value, 14) + " %"
+                + ";\nВода = " + getValues(value, 18) + ".");
     }
 }
