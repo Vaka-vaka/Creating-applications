@@ -55,10 +55,11 @@ public class Parser {
         Element divWth = page.select("div[class=frame-now]").first();
         assert divWth != null;
         String names = divWth.select("div[class=current-time]").text();
-        //Elements label = divWth.select("div[class=item-label]");
+        String weatherDescription = divWth.select("div[class=weather-description]").text();
         String value = divWth.select("div[class=item-value]").text();
         String date = getDateFromString(names);
         System.out.println("Погода Gismeteo " + date + "\nТемпература = " + getValues(value, 0)
+                + " (" + weatherDescription + ")"
                 + ";\nВітер = " + getValues(value, 2) + " м/с"
                 + ";\nТиск = " + getValues(value, 8) + " мм рт. ст."
                 + ";\nВологість = " + getValues(value, 14) + " %"
