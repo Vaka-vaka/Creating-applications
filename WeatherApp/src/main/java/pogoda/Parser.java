@@ -20,12 +20,12 @@ public class Parser {
     private static Document getPage() throws IOException {
         String url = "https://www.gismeteo.ua/ua/";
         return Jsoup.parse(new URL(url), 3000);
-//        Document page = Jsoup.parse(new URL(url), 3000);
-//        return page;
     }
 
-    //Нд, 26 березня, 22:15
-    private static final Pattern pattern = Pattern.compile("\\d{2}\\s\\W{7}");
+    //Document page = Jsoup.parse(new URL(url), 3000);
+    //return page;
+    //Нд, 26 березня, 22:15 \d{1,2}\s\W{5,9}
+    private static final Pattern pattern = Pattern.compile("\\d{1,2}\\s\\W{5,9}");
 
     private static String getDateFromString(String stringDate) throws Exception {
         Matcher matcher = pattern.matcher(stringDate);
