@@ -16,5 +16,9 @@ public class Main {
      */
     public static void main(String[] args) {
         TicTacToe.printBoard();
+        System.out.println();
+        System.out.println(TicTacToe.getChar(9));
+        System.out.println();
+        System.out.println(TicTacToe.checkThree(1, 1, 1));
     }
 }
