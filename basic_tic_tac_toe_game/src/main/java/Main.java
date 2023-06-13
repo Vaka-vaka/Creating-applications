@@ -15,6 +15,6 @@ public class Main {
      * @param args command Line arguments
      */
     public static void main(String[] args) {
-
+        TicTacToe.printBoard();
     }
 }

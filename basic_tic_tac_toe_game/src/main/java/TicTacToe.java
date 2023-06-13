@@ -9,5 +9,21 @@
 package src.main.java;
 
 public class TicTacToe {
+    static final char[] line1 = {'1', '2', '3'};
+    static final char[] line2 = {'4', '5', '6'};
+    static final char[] line3 = {'7', '8', '9'};
 
+    public static void printBoard() {
+        for (int i = 0; i < 3; i++) {
+            System.out.print(line1[i] + " | ");
+        }
+        System.out.println();
+        for (int i = 0; i < 3; i++) {
+            System.out.print(line2[i] + " | ");
+        }
+        System.out.println();
+        for (int i = 0; i < 3; i++) {
+            System.out.print(line3[i] + " | ");
+        }
+    }
 }
