@@ -31,23 +31,23 @@ public class TicTacToe {
     }
 
     public static boolean move(char c, int position) {
-        if (1 == position) {
+        if (1 == position && line1[0] == '1') {
             line1[0] = c;
-        } else if (2 == position) {
+        } else if (2 == position && line1[1] == '2') {
             line1[1] = c;
-        } else if (3 == position) {
+        } else if (3 == position && line1[2] == '3') {
             line1[2] = c;
-        } else if (4 == position) {
+        } else if (4 == position && line2[0] == '4') {
             line2[0] = c;
-        } else if (5 == position) {
+        } else if (5 == position && line2[1] == '5') {
             line2[1] = c;
-        } else if (6 == position) {
+        } else if (6 == position && line2[2] == '6') {
             line2[2] = c;
-        } else if (7 == position) {
+        } else if (7 == position && line3[0] == '7') {
             line3[0] = c;
-        } else if (8 == position) {
+        } else if (8 == position && line3[1] == '8') {
             line3[1] = c;
-        } else if (9 == position) {
+        } else if (9 == position && line3[2] == '9') {
             line3[2] = c;
         } else {
             return false;
