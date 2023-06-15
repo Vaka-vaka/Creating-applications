@@ -13,6 +13,8 @@ public class TicTacToe {
     static final char[] line2 = {'4', '5', '6'};
     static final char[] line3 = {'7', '8', '9'};
 
+    static char aChar = 'x';
+
     public static void printBoard() {
         for (int i = 0; i < 3; i++) {
             System.out.print(line1[i] + " | ");
@@ -25,6 +27,7 @@ public class TicTacToe {
         for (int i = 0; i < 3; i++) {
             System.out.print(line3[i] + " | ");
         }
+        System.out.println();
     }
 
     public static boolean move(char c, int position) {
@@ -83,5 +86,48 @@ public class TicTacToe {
         return (v1 != ' ') && (v1 == v2) && (v2 == v3);
     }
 
+    public static boolean isBoardFull() {
+        int emptySpaseCount = 0;
+        for (int i = 0; i < 3; i++) {
+            if (line1[0] == '1') {
+                emptySpaseCount++;
+            } else if (line1[1] == '2') {
+                emptySpaseCount++;
+            } else if (line1[2] == '3') {
+                emptySpaseCount++;
+            } else if (line2[0] == '4') {
+                emptySpaseCount++;
+            } else if (line2[1] == '5') {
+                emptySpaseCount++;
+            } else if (line2[2] == '6') {
+                emptySpaseCount++;
+            } else if (line3[0] == '7') {
+                emptySpaseCount++;
+            } else if (line3[1] == '8') {
+                emptySpaseCount++;
+            } else if (line3[2] == '9') {
+                emptySpaseCount++;
+            }
+        }
+        return emptySpaseCount == 0;
+    }
 
+    public static boolean checkGameOver() {
+        if (isBoardFull()) {
+            return true;
+        }
+
+        boolean line1 = checkThree(1, 2, 3);
+        boolean line2 = checkThree(4, 5, 6);
+        boolean line3 = checkThree(7, 8, 9);
+
+        boolean col1 = checkThree(1, 4, 7);
+        boolean col2 = checkThree(2, 5, 8);
+        boolean col3 = checkThree(3, 6, 9);
+
+        boolean dia1 = checkThree(1, 5, 9);
+        boolean dia2 = checkThree(3, 5, 7);
+
+        return line1 || line2 || line3 || col1 || col2 || col3 || dia1 || dia2;
+    }
 }
